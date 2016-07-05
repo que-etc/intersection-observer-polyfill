@@ -1,0 +1,163 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1;
+}
+
+#container {
+    display: flex;
+}
+
+#targets {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+#targets .target {
+    height: 100vh;
+    transition: height 2s;
+}
+
+#targets.collapse .target {
+    animation-name: collapse;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#targets.compact .target {
+    height: 33.333vh;
+}
+
+#targets.compact .target:hover {
+    height: 100vh;
+}
+
+@keyframes collapse {
+    from {
+        height: 100vh;
+    }
+
+    to {
+        height: 33.333vh;
+    }
+}
+
+#target1 {
+    background-color: #fbbc05;
+}
+
+#target2 {
+    background-color: #455a64;
+}
+
+#target3 {
+    background-color: #4285f4;
+}
+
+#logger {
+    width: 30%;
+    min-width: 460px;
+    min-height: 100vh;
+    background-color: #263238;
+    box-shadow: 6px 0px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto Mono', sans-serif;
+    z-index: 100;
+    position: relative;
+}
+
+#logger-content {
+    position: fixed;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+#observation-result {
+    font-size: 1em;
+    line-height: 17px;
+    color: #5fb3b3;
+    counter-reset: line;
+}
+
+#observation-result .line {
+    counter-increment: line;
+    margin-left: 50px;
+}
+
+#observation-result .line:before {
+    position: absolute;
+    left: 0;
+    content: counter(line);
+    color: #36474e;
+}
+
+#observation-result .number {
+    color: #f99157;
+}
+
+#observation-result .number.changed {
+    animation-name: changed;
+    animation-duration: 1s;
+}
+
+#observation-result .text {
+    color: #d6d6d6;
+}
+
+@keyframes changed {
+    from {
+        background: #754040;
+    }
+
+    to {
+        background: #263238;
+    }
+}
+
+.block-title {
+    font-size: 9em;
+    color: white;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    margin-top: -75px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.page-title {
+    color: #d6d6d6;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
