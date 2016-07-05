@@ -1,0 +1,23 @@
+{
+    "name": "intersection-observer-polyfill",
+    "description": "A polyfill of IntersectionObserver API",
+    "authors": [
+        "Denis Rul <que.etc@bgmail.com>"
+    ],
+    "moduleType": [
+        "globals",
+        "amd",
+        "node",
+        "es6"
+    ],
+    "version": "0.1.0",
+    "main": [
+        "index.js"
+    ],
+    "keywords": [
+        "util",
+        "client",
+        "browser",
+        "polyfill"
+    ]
+}
