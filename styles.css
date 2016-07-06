@@ -38,11 +38,15 @@ body {
 #targets {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 #targets .target {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: height 2s;
 }
 
@@ -85,7 +89,6 @@ body {
 }
 
 #logger {
-    width: 30%;
     min-width: 460px;
     min-height: 100vh;
     background-color: #263238;
@@ -146,13 +149,9 @@ body {
 .block-title {
     font-size: 9em;
     color: white;
-    text-align: center;
-    margin: 0;
-    position: relative;
-    top: 50%;
-    margin-top: -75px;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .page-title {
